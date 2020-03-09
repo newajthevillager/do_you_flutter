@@ -76,8 +76,8 @@ class _AddPageState extends State<AddPage> {
       height: 50,
       width: double.infinity,
       child: RaisedButton.icon(
-        icon: Icon(Icons.camera),
-        label: Text("Add Image"),
+        icon: Icon(Icons.camera, color: Colors.white),
+        label: Text("Add Image", style: TextStyle(color: Colors.white)),
         color: Colors.blue,
         onPressed: () {},
       ),
@@ -89,8 +89,8 @@ class _AddPageState extends State<AddPage> {
       height: 50,
       width: 20.0,
       child: RaisedButton.icon(
-        icon: Icon(Icons.save),
-        label: Text("Save"),
+        icon: Icon(Icons.save, color: Colors.white),
+        label: Text("Save", style: TextStyle(color : Colors.white)),
         color: Colors.blue,
         onPressed: () async {},
       ),
