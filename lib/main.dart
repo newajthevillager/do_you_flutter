@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:iremember/blocs/todo_bloc/todos_bloc.dart';
 import './ui/pages/home.dart';
 
 /* 
@@ -22,13 +24,16 @@ void main() => runApp(IRememberApp());
 class IRememberApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'IRemember',
-      theme: ThemeData(primaryColor: Colors.deepOrange),
-      routes: {
-        "/": (_) => HomePage(),
-      },
+    return BlocProvider<TodosBloc>(
+      create: (context) => TodosBloc(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'IRemember',
+        theme: ThemeData(primaryColor: Colors.deepOrange),
+        routes: {
+          "/": (_) => HomePage(),
+        },
+      ),
     );
   }
 }

@@ -28,8 +28,8 @@ class TodoRepositoryImpl implements TodoRepository {
 
   @override
   Stream<List<TodoModel>> getTodos() {
-    return todoCollection.snapshots().map((quesrySnapshot) {
-      return quesrySnapshot.documents.map((documentSnap) {
+    return todoCollection.snapshots().map((querySnapshot) {
+      return querySnapshot.documents.map((documentSnap) {
         return TodoModel.fromSnapshot(documentSnap);
       }).toList();
     });
